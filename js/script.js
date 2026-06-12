@@ -228,3 +228,67 @@ window.onload = function () {
 
     cargarLocalStorage();
 }
+function enviarMensaje(){
+
+    let nombre =
+        document.getElementById("nombreContacto").value.trim();
+
+    let correo =
+        document.getElementById("correoContacto").value.trim();
+
+    let mensaje =
+        document.getElementById("mensajeContacto").value.trim();
+
+    if(nombre === "" ||
+       correo === "" ||
+       mensaje === ""){
+
+        alert("Complete todos los campos");
+        return;
+    }
+
+    let mensajes =
+        JSON.parse(localStorage.getItem("mensajes")) || [];
+
+    mensajes.push({
+        nombre,
+        correo,
+        mensaje,
+        fecha: new Date().toLocaleString()
+    });
+
+    localStorage.setItem(
+        "mensajes",
+        JSON.stringify(mensajes)
+    );
+
+    mostrarMensajes();
+
+    alert("Mensaje enviado correctamente");
+
+    document.getElementById("formContacto").reset();
+}
+
+function mostrarMensajes(){
+
+    let mensajes =
+        JSON.parse(localStorage.getItem("mensajes")) || [];
+
+    let contenedor =
+        document.getElementById("listaMensajes");
+
+    contenedor.innerHTML = "";
+
+    mensajes.forEach(m => {
+
+        contenedor.innerHTML += `
+            <div class="mensaje">
+                <strong>${m.nombre}</strong><br>
+                ${m.correo}<br>
+                ${m.mensaje}<br>
+                <small>${m.fecha}</small>
+                <hr>
+            </div>
+        `;
+    });
+}
