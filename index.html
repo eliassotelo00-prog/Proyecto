@@ -185,12 +185,29 @@
 
     <h2>Contacto</h2>
 
-    <form>
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Correo">
-        <textarea placeholder="Mensaje"></textarea>
-        <button type="button">Enviar</button>
+    <form id="formContacto">
+
+        <input type="text"
+               id="nombreContacto"
+               placeholder="Nombre">
+
+        <input type="email"
+               id="correoContacto"
+               placeholder="Correo">
+
+        <textarea id="mensajeContacto"
+                  placeholder="Mensaje"></textarea>
+
+        <button type="button"
+                onclick="enviarMensaje()">
+            Enviar
+        </button>
+
     </form>
+
+    <h3>Mensajes Recibidos</h3>
+
+    <div id="listaMensajes"></div>
 
 </section>
 
