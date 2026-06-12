@@ -227,6 +227,8 @@ window.onload = function () {
     actualizarHora();
 
     cargarLocalStorage();
+
+    mostrarMensajes();
 }
 function enviarMensaje(){
 
