@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Fuel Station</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>Shell Fuel Station</h1>
+    <p>Energía que mueve tu camino</p>
+
+    <div id="hora"></div>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#dashboard">Estadísticas</a></li>
+            <li><a href="#combustibles">Combustibles</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#ventas">Ventas</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section id="inicio">
+
+    <h2>Bienvenido</h2>
+
+    <p>Sistema de gestión y venta de combustibles.</p>
+
+    <button onclick="mostrarInfo()">Mostrar Información</button>
+
+    <div id="info">
+        <p>Combustibles Premium.</p>
+        <p>Atención 24 Horas.</p>
+        <p>Calidad Garantizada.</p>
+    </div>
+
+</section>
+
+<section id="dashboard">
+
+    <h2>Dashboard de Ventas</h2>
+
+    <div class="estadisticas">
+
+        <div class="box">
+            <h3 id="ventasRealizadas">0</h3>
+            <p>Ventas</p>
+        </div>
+
+        <div class="box">
+            <h3 id="litrosVendidos">0</h3>
+            <p>Litros Vendidos</p>
+        </div>
+
+        <div class="box">
+            <h3 id="recaudacion">0</h3>
+            <p>Gs Recaudados</p>
+        </div>
+        <div class="box">
+            <h3 id="combustibleTop">Sin datos</h3>
+            <p>Más Vendido</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="combustibles">
+
+    <h2>Combustibles Disponibles</h2>
+
+    <div class="cards">
+        <div class="card"><h3>Shell V-Power Racing</h3><p>Gs. 8.300 / litro</p></div>
+        <div class="card"><h3>Shell Super</h3><p>Gs. 7.200 / litro</p></div>
+        <div class="card"><h3>Shell Regular</h3><p>Gs. 6.500 / litro</p></div>
+        <div class="card"><h3>Shell Diesel</h3><p>Gs. 7.000 / litro</p></div>
+    </div>
+
+</section>
+
+<section id="servicios">
+
+    <h2>Servicios</h2>
+
+    <div class="cards">
+        <div class="card">Tienda 24 Horas</div>
+        <div class="card">Cambio de Aceite</div>
+        <div class="card">Lavado de Vehículos</div>
+        <div class="card">Inflado de Neumáticos</div>
+        <div class="card">Cafetería</div>
+    </div>
+
+</section>
+
+<section id="ventas">
+
+    <h2>Registro de Venta</h2>
+
+    <form>
+
+        <input type="text" id="cliente" placeholder="Nombre del Cliente">
+
+        <select id="combustible">
+            <option value="">Seleccione Combustible</option>
+            <option value="8300">Shell V-Power Racing</option>
+            <option value="7200">Shell Super</option>
+            <option value="6500">Shell Regular</option>
+            <option value="7000">Shell Diesel</option>
+        </select>
+
+        <input type="number" id="litros" placeholder="Cantidad de Litros">
+
+        <select id="metodoPago">
+            <option value="">Método de Pago</option>
+            <option>Efectivo</option>
+            <option>Tarjeta</option>
+            <option>QR</option>
+        </select>
+
+        <button type="button" onclick="calcularVenta()">Registrar Venta</button>
+
+    </form>
+
+    <h3 id="resultado"></h3>
+
+</section>
+
+<section>
+
+    <h2>Ticket de Compra</h2>
+    <div id="ticket"></div>
+
+</section>
+
+<section>
+
+    <h2>Historial de Ventas</h2>
+
+    <table id="tablaVentas">
+
+        <thead>
+            <tr>
+             <th>Fecha</th>
+             <th>Cliente</th>
+             <th>Combustible</th>
+             <th>Litros</th>
+             <th>Pago</th>
+             <th>Total</th>
+             <th>Acción</th>
+             </tr>
+        </thead>
+
+        <tbody></tbody>
+
+    </table>
+    <button onclick="borrarHistorial()">Borrar Todo el Historial</button>
+
+</section>
+
+<section id="nosotros">
+
+    <h2>Integrantes</h2>
+
+    <ul>
+        <li>Grissel Samaniego</li>
+        <li>Emmanuel Vázquez</li>
+        <li>Elías Sotelo</li>
+    </ul>
+
+</section>
+
+<section id="contacto">
+
+    <h2>Contacto</h2>
+
+    <form>
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo">
+        <textarea placeholder="Mensaje"></textarea>
+        <button type="button">Enviar</button>
+    </form>
+
+</section>
+
+<footer>
+    <p>Proyecto Final - Aplicaciones y Programación Web</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
